@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Acuta';
+  src: url('../fonts/Acuta-9fat.eot');
+  src: url('../fonts/Acuta-9fat.woff2') format('woff2'),
+       url('../fonts/Acuta-9fat.woff') format('woff'),
+       url('../fonts/Acuta-9fat.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../fonts/geomanist-regular.eot');
+  src: url('../fonts/geomanist-regular.woff2') format('woff2'),
+       url('../fonts/geomanist-regular.woff') format('woff'),
+       url('../fonts/geomanist-regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../fonts/geomanist-bold.eot');
+  src: url('../fonts/geomanist-bold.woff2') format('woff2'),
+       url('../fonts/geomanist-bold.woff') format('woff'),
+       url('../fonts/geomanist-bold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

@@ -1,0 +1,135 @@
+.navigation {
+  a {
+    color: $white;
+    display: block;
+    font-family: 'Geomanist', serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: .03rem;
+    padding: 1.5rem .5rem;
+    text-transform: uppercase;
+  }
+
+  &__toggle {
+    background: transparent;
+    border: none;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: absolute;
+    right: .5rem;
+    z-index: 100;
+
+    @include small {
+      display: none;
+    }
+  }
+
+  &__toggle-label {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  &__burger {
+    height: 2.2rem;
+    vertical-align: middle;
+    width: 2.2rem;
+  }
+
+  &__list {
+    display: none;
+    list-style: none;
+    padding: 0;
+
+    &--is-visible {
+      display: block;
+    }
+
+    @include small {
+      display: inline-block;
+      margin: 0 0 0 3rem;
+    }
+
+    > .menu-item.current-menu-item {
+      position: relative;
+
+      &:before {
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: $emperor transparent transparent transparent;
+        content: ' ';
+        height: 0;
+        left: 50%;
+        position: absolute;
+        top: 100%;
+        transform: translateX(-50%);
+        width: 0;
+      }
+    }
+
+    > .menu-item:not(.current-menu-item) > a > span {
+      border-bottom-color: transparent !important;
+    }
+  }
+
+  .sub-menu {
+    background-color: darken($emperor, 5%);
+    display: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    @include small {
+      background-color: $emperor;
+      left: 0;
+      min-width: 100%;
+      padding: 1.5rem;
+      position: absolute;
+      top: 100%;
+      z-index: 200;
+    }
+
+    > .menu-item > a {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.4;
+      padding-bottom: 1.5rem;
+      padding-top: .5rem;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .menu-item--is-active > .sub-menu {
+    display: block;
+  }
+
+  .menu-item {
+    display: block;
+    position: relative;
+
+    @include small {
+      float: left;
+    }
+  }
+
+  .menu-item > a:hover,
+  .menu-item > a:focus {
+    text-decoration: none;
+  }
+
+  .menu-item > a:hover > span,
+  .menu-item > a:focus > span {
+    border-bottom-color: currentColor !important;
+  }
+
+  &__list > .menu-item + .menu-item {
+    @include small {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.page {
+  &__header-title {
+    display: inline-block;
+    font-size: 2rem;
+    line-height: (18/13);
+    margin-left: -1rem;
+    margin-top: 0;
+    padding: .1rem 1rem;
+    text-transform: uppercase;
+    width: auto;
+  }
+
+  &__content {
+    font-size: 1.8rem;
+    line-height: 1.5;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    strong,
+    b {
+      font-family: 'Geomanist';
+      font-weight: bold;
+    }
+  }
+}
