@@ -101,33 +101,41 @@
 
   &__start-arrow {
     &:before {
+      border-color: transparent $white transparent transparent;
       border-style: solid;
+      border-width: 1.15rem 1.15rem 1.15rem 0;
       bottom: 0;
       content: ' ';
       display: inline-block;
       height: 0;
-      left: -1.5rem;
+      left: -1.15rem;
       position: absolute;
       width: 0;
 
-      border-width: 1.5rem 1.5rem 1.5rem 0;
-      border-color: transparent $white transparent transparent;
+      @include small {
+        border-width: 1.5rem 1.5rem 1.5rem 0;
+        left: -1.5rem;
+      }
     }
   }
 
   &__end-arrow {
     &:after {
+      border-color: transparent transparent transparent $white;
       border-style: solid;
+      border-width: 1.15rem 0 1.15rem 1.15rem;
       bottom: 0;
       display: inline-block;
       content: ' ';
       height: 0;
       position: absolute;
-      right: -1.5rem;
+      right: -1.15rem;
       width: 0;
 
-      border-width: 1.5rem 0 1.5rem 1.5rem;
-      border-color: transparent transparent transparent $white;
+      @include small {
+        border-width: 1.5rem 0 1.5rem 1.5rem;
+        right: -1.5rem;
+      }
     }
   }
 }
