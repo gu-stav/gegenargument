@@ -47,11 +47,20 @@ function ga_meta_boxes( $meta_boxes ) {
 function admin_save_post($post_id, $post) {
   $post = get_post($post_id);
   $has_parent = $post->post_parent;
+  $field_key = 'color';
+  $meta_color = get_post_meta($post_id, $field[$field_key], true);
+  $update = false;
+  $color = '';
 
   if($has_parent) {
-    $field_key = 'color';
-    $meta_color = get_post_meta($post_id, $field[$field_key], true);
-    update_post_meta($post_id, $field_key, '', $meta_color[$field_key][0]);
+    $update = true;
+  } else if(!$meta_color[$field_key][0]) {
+    $color = 'rgb(102, 253, 179)';
+    $update = true;
+  }
+
+  if($update) {
+    update_post_meta($post_id, $field_key, $color, $meta_color[$field_key][0]);
   }
 }
 add_action( 'save_post', 'admin_save_post' );
