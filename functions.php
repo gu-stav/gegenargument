@@ -63,6 +63,17 @@ function admin_save_post($post_id, $post) {
     update_post_meta($post_id, $field_key, $color, $meta_color[$field_key][0]);
   }
 }
+
+function modify_admin_bar() {
+  remove_menu_page('edit-comments.php');
+  remove_menu_page('edit.php');
+  remove_menu_page('edit.php?post_type=fa_gallery');
+  remove_menu_page('edit.php?post_type=tribe_events');
+  remove_menu_page('admin.php?page=manage_amr_ical');
+}
+
+add_action( 'admin_menu', 'modify_admin_bar' );
+
 add_action( 'save_post', 'admin_save_post' );
 
 add_filter( 'rwmb_meta_boxes', 'ga_meta_boxes' );
