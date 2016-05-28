@@ -28,14 +28,14 @@ function color() {
 
   $parent = $post->post_parent;
 
-  function get_color_by_post($post) {
-    $meta = $meta_color = get_post_meta($post->ID, $field['color'], true);
+  function get_color_by_post($postID) {
+    $meta = $meta_color = get_post_meta($postID, $field['color'], true);
     return $meta['color'][0];
   }
 
   if($parent) {
-
+    return get_color_by_post($parent);
   } else {
-    return get_color_by_post($post);
+    return get_color_by_post($post->ID);
   }
 }
