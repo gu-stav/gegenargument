@@ -122,14 +122,12 @@ class Colored_Menu extends Walker_nav_menu {
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
 
-    if($depth == 0) {
-      $color = get_post_meta($item->object_id, 'color', true);
+    $color = get_post_meta($item->object_id, 'color', true);
 
-      if($color) {
-        $item_output .= '<span style="border-bottom: 1px solid ' . $color . '">';
-      } else {
-        $item_output .= '<span style="border-bottom: 1px solid rgba(255, 255, 255, .25)">';
-      }
+    if($color) {
+      $item_output .= '<span style="border-bottom: 1px solid ' . $color . '">';
+    } else {
+      $item_output .= '<span style="border-bottom: 1px solid rgba(255, 255, 255, .25)">';
     }
 
     $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;

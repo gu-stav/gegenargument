@@ -69,16 +69,15 @@
       }
     }
 
-    > .menu-item:not(.current-menu-item) > a > span {
+    .menu-item:not(.current-menu-item) > a > span {
       border-bottom-color: transparent !important;
     }
   }
 
   .sub-menu {
-    background-color: darken($emperor, 5%);
     display: none;
     margin-left: 0;
-    padding-left: 0;
+    padding: 1rem 1rem .7rem 2rem;
 
     @include small {
       background-color: $emperor;
@@ -96,11 +95,6 @@
       line-height: 1.4;
       padding-bottom: 1.5rem;
       padding-top: .5rem;
-
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
     }
   }
 
