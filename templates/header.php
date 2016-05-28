@@ -27,7 +27,7 @@
             <div class="slider__content">
               <strong class="slider__title">
                 <span class="slider__start-arrow"></span>
-                <?php the_title() ?>
+                <?php the_title(); ?>
                 <span class="slider__end-arrow"></span>
               </strong>
             </div>
