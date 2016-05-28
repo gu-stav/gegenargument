@@ -69,7 +69,6 @@ function modify_admin_bar() {
   remove_menu_page('edit.php');
   remove_menu_page('edit.php?post_type=fa_gallery');
   remove_menu_page('edit.php?post_type=tribe_events');
-  remove_menu_page('admin.php?page=manage_amr_ical');
 }
 
 add_action( 'admin_menu', 'modify_admin_bar' );
