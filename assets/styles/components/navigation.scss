@@ -69,7 +69,7 @@
       }
     }
 
-    .menu-item:not(.current-menu-item):not(.current_page_ancestor) > a > span {
+    .menu-item:not(.current-menu-item):not(.current_page_ancestor) > a:not(:hover):not(:focus) > span {
       border-bottom-color: transparent !important;
     }
   }
@@ -114,11 +114,6 @@
   .menu-item > a:hover,
   .menu-item > a:focus {
     text-decoration: none;
-  }
-
-  .menu-item > a:hover > span,
-  .menu-item > a:focus > span {
-    border-bottom-color: currentColor !important;
   }
 
   &__list > .menu-item + .menu-item {

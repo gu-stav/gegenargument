@@ -55,7 +55,7 @@ function admin_save_post($post_id, $post) {
   if($has_parent) {
     $update = true;
   } else if(!$meta_color[$field_key][0]) {
-    $color = 'rgb(102, 253, 179)';
+    $color = 'rgb(255, 255, 255, .25)';
     $update = true;
   }
 
