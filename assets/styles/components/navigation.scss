@@ -69,7 +69,7 @@
       }
     }
 
-    .menu-item:not(.current-menu-item) > a > span {
+    .menu-item:not(.current-menu-item):not(.current_page_ancestor) > a > span {
       border-bottom-color: transparent !important;
     }
   }
