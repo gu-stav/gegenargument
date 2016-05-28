@@ -38,9 +38,8 @@
     closeAllItems: function() {
       var self = this;
 
-      $.each(this.open, function(openEl) {
-        var $openEl = $(openEl);
-        self.closeItem($openEl);
+      $.each(this.open, function() {
+        self.closeItem($(this));
       });
     },
 
@@ -51,10 +50,13 @@
     */
 
     closeItem: function($el) {
-      var self = this;
-      $(window).off('click.navigation');
+      if(!$el) {
+        return;
+      }
+
       $el.closest('.menu-item').removeClass('menu-item--is-active');
       this.open = [];
+      $(window).off('click.navigation');
     },
 
     /*
