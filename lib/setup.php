@@ -22,6 +22,10 @@ function setup() {
     'primary_navigation' => __('Primary Navigation', 'sage')
   ]);
 
+  register_nav_menus([
+    'footer_navigation' => __('Footer Navigation', 'sage')
+  ]);
+
   register_post_type('header',
     array(
       'labels' => array(

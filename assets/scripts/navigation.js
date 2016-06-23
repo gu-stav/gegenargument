@@ -68,6 +68,8 @@
     openItem: function($el) {
       var self = this;
 
+      this.closeAllItems();
+
       this.open.push($el);
       $el.closest('.menu-item').addClass('menu-item--is-active');
 

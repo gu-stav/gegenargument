@@ -18,7 +18,9 @@
   <div class="page__content">
     <div class="row">
       <div class="col col-sm-8 col-sm-offset-2">
-      <?php the_content(); ?>
+        <div class="content">
+          <?php the_content(); ?>
+        </div>
     </div>
   </div>
 </article>
