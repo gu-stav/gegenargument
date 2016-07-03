@@ -12,6 +12,8 @@
     $slider.slick({
       adaptiveHeight: true,
       arrows: false,
+      autoplay: true,
+      autoplaySpeed: 1500,
       infinite: true,
       slide: '.slider__slide',
     });
