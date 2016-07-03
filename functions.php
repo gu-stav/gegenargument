@@ -24,15 +24,17 @@ function ga_meta_boxes( $meta_boxes ) {
     $color_field = array(
         'title'      => __( 'Extras', 'sage' ),
         'post_types' => array('page', 'header'),
+        'placeholder' => __('Please select a color ...', 'sage'),
         'fields'     => array(
             array(
                 'id'   => 'color',
                 'name' => __( 'Color', 'sage' ),
                 'type' => 'select',
                 'options' => [
-                  'rgb(102, 253, 179)' => __( 'Green', 'sage' ),
-                  'rgb(45, 255, 254)' => __( 'Turquoise', 'sage' ),
-                  'rgb(243, 149, 38)' => __( 'Orange', 'sage' )
+                  'rgba(255, 255, 255, .25)' => __('No color', 'sage'),
+                  'rgb(102, 253, 179)' => __('Green', 'sage'),
+                  'rgb(45, 255, 254)' => __('Turquoise', 'sage'),
+                  'rgb(243, 149, 38)' => __('Orange', 'sage')
                 ],
             ),
         ),
