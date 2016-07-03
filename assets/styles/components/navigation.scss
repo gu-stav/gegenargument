@@ -6,8 +6,13 @@
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: .03rem;
-    padding: 1.5rem .5rem;
+    padding: 1.5rem 1rem;
     text-transform: uppercase;
+
+    @include medium {
+      padding-left: 1.8rem;
+      padding-right: 1.8rem;
+    }
   }
 
   &__toggle {
