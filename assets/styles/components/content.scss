@@ -1,7 +1,21 @@
 .content {
+  font-size: 1.8rem;
+  line-height: 1.5;
   max-width: 54.5rem;
 
   ul {
     padding-left: 1.6rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  strong,
+  b {
+    font-family: 'Geomanist';
+    font-weight: bold;
+    letter-spacing: .08rem;
   }
 }
