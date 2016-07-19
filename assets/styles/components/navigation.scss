@@ -76,6 +76,7 @@
 
     .menu-item:not(.current-menu-item):not(.current_page_ancestor) > a:not(:hover):not(:focus) > span {
       border-bottom-color: transparent !important;
+      color: white !important;
     }
   }
 

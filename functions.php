@@ -131,7 +131,7 @@ class Colored_Menu extends Walker_nav_menu {
     }
 
     if($color) {
-      $item_output .= '<span style="border-bottom: 1px solid ' . $color . '">';
+      $item_output .= '<span style="color: ' . $color . ' ; border-bottom: 1px solid ' . $color . '">';
     } else {
       $item_output .= '<span style="border-bottom: 1px solid rgba(255, 255, 255, .25)">';
     }
