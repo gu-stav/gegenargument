@@ -1,7 +1,6 @@
 <?php use Roots\Sage\Titles; ?>
 
 <article class="page">
-
   <?php if(!is_front_page()): ?>
     <div class="row">
       <div class="col col-sm-8 col-sm-offset-2">
@@ -21,6 +20,7 @@
         <div class="content">
           <?php the_content(); ?>
         </div>
+      </div>
     </div>
   </div>
 </article>

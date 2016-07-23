@@ -146,4 +146,11 @@ class Colored_Menu extends Walker_nav_menu {
   }
 }
 
+function shortcode_date() {
+  if(function_exists('tribe_include_view_list')) {
+    return tribe_include_view_list();
+  }
+}
+add_shortcode('calendar', 'shortcode_date');
+
 ?>
