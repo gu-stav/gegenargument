@@ -68,6 +68,6 @@ $has_venue_address = ( ! empty( $venue_details['name'] ) ) ? ' location' : '';
   </h3>
 
   <div class="event__content">
-    <?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
+    <?php the_content() ?>
   </div>
 </div>
