@@ -62,10 +62,10 @@ $has_venue_address = ( ! empty( $venue_details['name'] ) ) ? ' location' : '';
   </div>
 
   <h1 class="event__title">
-    <?php the_title() ?>
+    <?php the_title(); ?>
   </h1>
 
   <div class="event__content">
-    <?php the_content() ?>
+    <?php the_content(); ?>
   </div>
 </div>

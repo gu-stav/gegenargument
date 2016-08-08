@@ -63,11 +63,11 @@ $has_venue_address = ( ! empty( $venue_details['name'] ) ) ? ' location' : '';
 
   <h3 class="event__title">
     <a href="<?php echo esc_url( tribe_get_event_link() ); ?>">
-      <?php the_title() ?>
+      <?php the_title(); ?>
     </a>
   </h3>
 
   <div class="event__content">
-    <?php the_content() ?>
+    <?php the_content(); ?>
   </div>
 </div>
