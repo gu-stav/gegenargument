@@ -8,10 +8,11 @@
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 
     > a {
       text-decoration: none;
+      text-transform: none;
 
       &:hover,
       &:focus {
@@ -21,14 +22,17 @@
   }
 
   &__meta {
-    font-size: 2.6rem;
+    font-family: 'Acuta', sans-serif;
+    font-size: 3.1rem;
     font-weight: 700;
     line-height: 1.2;
   }
 
-  &__location {
+  &__location,
+  &__time {
+    font-family: 'Geomanist', sans-serif;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.2;
     margin-left: 1rem;
   }

@@ -22,48 +22,40 @@ $has_venue_address = ( ! empty( $venue_details['name'] ) ) ? ' location' : '';
 <div class="event__container">
   <div class="event__meta">
     <?php
-      $dateFormat = 'd.m. H:i';
-      if(tribe_event_is_all_day()) {
-        $dateFormat = 'd.m.';
+      $date_divider = ' – ';
+      $time_divider = ' – ';
+
+      $start_date = tribe_get_start_date($post->ID, false, 'd.m.');
+      $end_date = tribe_get_end_date($post->ID, false, 'd.m.');
+
+      $start_time = tribe_get_start_date($post->ID, false, 'H:i');
+      $end_time = tribe_get_end_date($post->ID, false, 'H:i');
+
+      if($end_date == $start_date) {
+        $end_date = '';
+        $date_divider = '';
       }
 
-      $start = tribe_get_start_date($post->ID, false, $dateFormat);
-      $end = tribe_get_end_date($post->ID, false, $dateFormat);
-
-      echo $start;
-
-      if($end != $start) {
-        echo ' – ';
-
-        $start_date = tribe_get_start_date($post->ID, false, 'd.m.');
-        $end_date = tribe_get_end_date($post->ID, false, 'd.m.');
-
-        if($start_date == $end_date) {
-          $end = tribe_get_end_date($post->ID, false, 'H:i');
-        }
-
-        echo $end;
-      }
-    ?>
-
-    <?php
       if($has_venue_address) {
-    ?>
-        <span class="event__location">
-
-    <?php
-        echo wp_strip_all_tags($venue_details['name']);
-    ?>
-
-      </span>
-    <?php
+        $end_time .= ', ' . wp_strip_all_tags($venue_details['name']);
       }
-    ?>
+
+      echo $start_date;
+      echo $date_divider;
+      echo $end_date;
+    ?><span class="event__time"><?php
+      echo $start_time;
+      echo $time_divider;
+      echo $end_time;
+    ?></span>
+
   </div>
 
-  <h1 class="event__title">
-    <?php the_title(); ?>
-  </h1>
+  <h3 class="event__title">
+    <a href="<?php echo esc_url( tribe_get_event_link() ); ?>">
+      <?php the_title(); ?>
+    </a>
+  </h3>
 
   <div class="event__content">
     <?php the_content(); ?>
