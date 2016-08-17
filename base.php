@@ -15,16 +15,17 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="app"
          role="document">
+
       <main class="main">
         <div class="container">
           <?php include Wrapper\template_path(); ?>
         </div>
+      </main>
 
-        <?php
-          do_action('get_footer');
-          get_template_part('templates/footer');
-        ?>
-      </main><!-- /.main -->
+      <?php
+        do_action('get_footer');
+        get_template_part('templates/footer');
+      ?>
     </div><!-- /.wrap -->
     <?php
       wp_footer();
