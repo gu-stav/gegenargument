@@ -146,11 +146,22 @@ class Colored_Menu extends Walker_nav_menu {
   }
 }
 
-function shortcode_date() {
+function shortcode_date($atts) {
+  $atts = shortcode_atts(array(
+    'posts_per_page' => '5',
+  ), $atts);
+
+  if($atts['posts_per_page'] == 0) {
+    $atts['posts_per_page'] = apply_filters('tribe_events_single_venue_posts_per_page', 100);
+  }
+
   if(function_exists('tribe_include_view_list')) {
-    return tribe_include_view_list();
+    return tribe_include_view_list(array(
+      'posts_per_page' => $atts['posts_per_page'],
+    ));
   }
 }
+
 add_shortcode('calendar', 'shortcode_date');
 
 ?>
