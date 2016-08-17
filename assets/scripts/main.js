@@ -13,7 +13,7 @@
       adaptiveHeight: true,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 2500,
+      autoplaySpeed: 4500,
       infinite: true,
       slide: '.slider__slide',
     });
