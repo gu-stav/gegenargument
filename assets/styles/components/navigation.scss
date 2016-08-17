@@ -1,4 +1,12 @@
 .navigation {
+  @include small {
+    padding-left: 8.9rem;
+  }
+
+  @include medium {
+    padding-left: 14.9rem;
+  }
+
   a {
     color: $white;
     display: block;
