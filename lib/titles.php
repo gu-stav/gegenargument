@@ -29,8 +29,7 @@ function color() {
   $parent = $post->post_parent;
 
   function get_color_by_post($postID) {
-    $meta = $meta_color = get_post_meta($postID, $field['color'], true);
-    return $meta['color'][0];
+    return get_post_meta($postID, 'color', true);
   }
 
   if($parent) {

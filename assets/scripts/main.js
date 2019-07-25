@@ -6,16 +6,15 @@
 
   $(function() {
     var $slider = $('.slider');
-    var $controlsPrev = $slider.find('.slider__control--previous');
-    var $controlsNext = $slider.find('.slider__control--next');
+    var $controlsPrev = $('.slider__control--previous');
+    var $controlsNext = $('.slider__control--next');
 
     $slider.slick({
       adaptiveHeight: true,
       arrows: false,
       autoplay: true,
       autoplaySpeed: 4500,
-      infinite: true,
-      slide: '.slider__slide',
+      infinite: true
     });
 
     $controlsPrev.on('click.slider', function(e) {

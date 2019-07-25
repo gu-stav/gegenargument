@@ -14,5 +14,12 @@
   &__slider {
     font-family: "Acuta", serif;
     font-weight: normal;
+
+    &:hover .slider__control {
+      clip: auto;
+      height: auto;
+      overflow: auto;
+      width: auto;
+    }
   }
 }

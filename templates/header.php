@@ -2,28 +2,27 @@
 
   <?php if(is_front_page()): ?>
     <div class="header__slider">
+      <button class="slider__control slider__control--previous visuallyhidden">
+        <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z" fill="#fff"/></svg>
+
+        <span class="visuallyhidden">
+          <?php _e('Previous Slide', 'sage'); ?>
+        </span>
+      </button>
+
       <div class="slider">
-
-        <button class="slider__control slider__control--previous visuallyhidden">
-          <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z" fill="#fff"/></svg>
-
-          <span class="visuallyhidden">
-            <?php _e('Previous Slide', 'sage'); ?>
-          </span>
-        </button>
-
         <?php
         $args = array('posts_per_page' => 5,
                       'post_type' => 'header',
         );
 
         $header_posts = get_posts($args);
+
         foreach ($header_posts as $post):
           setup_postdata($post);
           $color = get_post_meta($post->ID, 'color');
         ?>
-          <div class="slider__slide"
-              style="background-color: <?= $color[0]; ?>;">
+          <div class="slider__slide" style="background-color: <?= $color[0]; ?>;">
             <div class="slider__content">
               <strong class="slider__title">
                 <span class="slider__start-arrow"></span>
@@ -36,16 +35,15 @@
           endforeach;
           wp_reset_postdata();
         ?>
-
-        <button class="slider__control slider__control--next visuallyhidden">
-          <span class="visuallyhidden">
-            <?php _e('Next Slide', 'sage'); ?>
-          </span>
-
-          <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z" fill="#fff"/></svg>
-        </button>
-
       </div>
+
+      <button class="slider__control slider__control--next visuallyhidden">
+        <span class="visuallyhidden">
+          <?php _e('Next Slide', 'sage'); ?>
+        </span>
+
+        <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z" fill="#fff"/></svg>
+      </button>
     </div>
   <?php endif; ?>
 

@@ -18,7 +18,7 @@
     }
   ],
   "scripts": {
-    "build": "bower install && gulp",
+    "build": "npx gulp",
     "jshint": "gulp jshint",
     "jscs": "jscs gulpfile.js assets/scripts/*.js"
   },
