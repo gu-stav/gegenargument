@@ -134,6 +134,7 @@ function shortcode_date($atts) {
 
   if(function_exists('tribe_include_view_list')) {
     return tribe_include_view_list(array(
+      'order' => 'DESC',
       'posts_per_page' => $atts['posts_per_page'],
     ));
   }
