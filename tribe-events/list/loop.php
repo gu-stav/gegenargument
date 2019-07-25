@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 global $post;
 global $more;
+
 $more = false;
 ?>
 

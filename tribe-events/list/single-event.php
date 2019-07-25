@@ -22,6 +22,8 @@ $has_venue_address = ( ! empty( $venue_details['name'] ) ) ? ' location' : '';
 <div class="event__container">
   <div class="event__meta">
     <?php
+      global $post;
+
       $date_divider = ' – ';
       $time_divider = ' – ';
 
