@@ -45,27 +45,6 @@ function ga_meta_boxes( $meta_boxes ) {
     return $meta_boxes;
 }
 
-/* Do not save meta-box color for child pages */
-function admin_save_post($post_id, $post) {
-  $post = get_post($post_id);
-  $has_parent = $post->post_parent;
-  $field_key = 'color';
-  $meta_color = get_post_meta($post_id, $field[$field_key], true);
-  $update = false;
-  $color = '';
-
-  if($has_parent) {
-    $update = true;
-  } else if(!$meta_color[$field_key][0]) {
-    $color = 'rgba(255, 255, 255, .25)';
-    $update = true;
-  }
-
-  if($update) {
-    update_post_meta($post_id, $field_key, $color, $meta_color[$field_key][0]);
-  }
-}
-
 function modify_admin_bar() {
   remove_menu_page('edit-comments.php');
   remove_menu_page('edit.php');
@@ -74,8 +53,6 @@ function modify_admin_bar() {
 }
 
 add_action( 'admin_menu', 'modify_admin_bar' );
-
-add_action( 'save_post', 'admin_save_post' );
 
 add_filter( 'rwmb_meta_boxes', 'ga_meta_boxes' );
 
